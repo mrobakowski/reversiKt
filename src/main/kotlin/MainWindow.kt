@@ -20,23 +20,26 @@ class MainWindow : View() {
         primaryStage.minHeight = size * cellSize + 39
         primaryStage.minWidth = size * cellSize + 16
 
+        val cellUis = Array<Pane?>(size * size) { null }
+
         root.center {
             stackpane {
                 val grid = gridpane {
                     for (row in 0..size - 1) {
                         for (column in 0..size - 1) {
-                            add(StackPane().apply {
+                            val cellUi = StackPane().apply {
                                 style = """
-                                -fx-background-color: green;
-                                -fx-border-color: black;
-                                -fx-border-insets: 0;
-                                -fx-border-width: 1;
-                                -fx-border-style: solid;
-                            """
-                            }, row, column)
+                                    -fx-background-color: green;
+                                    -fx-border-color: black;
+                                    -fx-border-insets: 0;
+                                    -fx-border-width: 1;
+                                    -fx-border-style: solid;
+                                """
+                            }
+                            cellUis[column * size + row] = cellUi
+                            add(cellUi, row, column)
                         }
                     }
-
 
                     //region constraints
                     for (i in 0..size - 1) {
@@ -58,6 +61,7 @@ class MainWindow : View() {
                         )
                     }
                     //endregion
+
                     prefHeight = size * cellSize
                     prefWidth = size * cellSize
                     maxWidth = Control.USE_PREF_SIZE
@@ -70,5 +74,8 @@ class MainWindow : View() {
                 background = Background(BackgroundFill(Paint.valueOf("black"), CornerRadii.EMPTY, Insets.EMPTY))
             }
         }
+
+        val board = Board(size)
+        board.applyToUi(cellUis.filterNotNull().toList())
     }
 }
