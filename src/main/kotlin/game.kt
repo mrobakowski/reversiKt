@@ -1,16 +1,47 @@
-import javafx.geometry.Insets
-import javafx.scene.layout.Background
-import javafx.scene.layout.BackgroundFill
-import javafx.scene.layout.CornerRadii
 import javafx.scene.layout.Pane
-import javafx.scene.paint.Paint
+import tornadofx.CSSClass
+import tornadofx.addClass
+import tornadofx.removeClass
 import tornadofx.stackpane
 import java.util.*
 
+private val directions = listOf(
+        Pair<Int, Int>::up, Pair<Int, Int>::down,
+        Pair<Int, Int>::left, Pair<Int, Int>::right,
+        Pair<Int, Int>::upRight, Pair<Int, Int>::upLeft,
+        Pair<Int, Int>::downRight, Pair<Int, Int>::downLeft
+)
+
 data class Board private constructor(val cells: List<Cell>, val size: Int, val currentPlayer: Player) {
-    val playableCells: List<Pair<Int, Int>> by lazy { throw NotImplementedError() } // TODO
+    val playableCells by lazy {
+        val res = mutableSetOf<Pair<Int, Int>>()
+        for (row in 0..size - 1) {
+            for (col in 0..size - 1) {
+                val pos = row to col
+                if (this[row, col] == Cell.Empty &&
+                    directions.any { checkDirection(it, pos) })
+                    res += pos
+            }
+        }
+        res
+    }
+
+    private fun checkDirection(dir: Pair<Int, Int>.() -> Pair<Int, Int>, pos: Pair<Int, Int>): Boolean {
+        var next = pos.dir()
+        val oppositeDiskColor = currentPlayer.opposite.disk
+        if (next !in this || this[next] != oppositeDiskColor) return false
+        while (next in this && this[next] == oppositeDiskColor) {
+            next = next.dir()
+        }
+        return next in this && this[next] == currentPlayer.disk
+    }
 
     operator fun get(row: Int, column: Int) = cells[column * size + row]
+    operator fun get(pos: Pair<Int, Int>) = cells[pos.second * size + pos.first]
+
+    fun isInBounds(x: Int, y: Int) = x >= 0 && x < size && y >= 0 && y < size
+    fun isInBounds(pos: Pair<Int, Int>) = isInBounds(pos.first, pos.second)
+    operator fun contains(pos: Pair<Int, Int>) = isInBounds(pos)
 
     constructor(size: Int) : this(
             {
@@ -29,18 +60,22 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
 
     fun applyToUi(uis: List<Pane>) {
         cells.forEachIndexed { i, cell ->
+            val row = i % size
+            val col = i / size
             val ui = uis[i]
             ui.children.clear()
+            ui.removeClass(Styles.legalCell)
+            if (row to col in playableCells) ui.addClass(Styles.legalCell)
             when (cell) {
-                is Cell.WhiteDisk -> addDisk("white", ui)
-                is Cell.BlackDisk -> addDisk("black", ui)
+                is Cell.WhiteDisk -> addDisk(Styles.whiteDisk, ui)
+                is Cell.BlackDisk -> addDisk(Styles.blackDisk, ui)
             }
         }
     }
 
-    private fun addDisk(s: String, ui: Pane) {
+    private fun addDisk(s: CSSClass, ui: Pane) {
         ui.stackpane {
-            background = Background(BackgroundFill(Paint.valueOf(s), CornerRadii(100.0, true), Insets(5.0)))
+            addClass(s)
         }
     }
 
@@ -49,12 +84,7 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
         val boardMut = cells.toMutableList().twoDim(size)
         boardMut[at] = currentPlayer.disk
 
-        for (direction in listOf(
-                Pair<Int, Int>::up, Pair<Int, Int>::down,
-                Pair<Int, Int>::left, Pair<Int, Int>::right,
-                Pair<Int, Int>::upRight, Pair<Int, Int>::upLeft,
-                Pair<Int, Int>::downRight, Pair<Int, Int>::downLeft
-        )) {
+        for (direction in directions) {
             var pos = direction(at)
             while (pos in boardMut && boardMut[pos] == currentPlayer.opposite.disk) {
                 boardMut[pos] = currentPlayer.disk
@@ -70,18 +100,33 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
     }
 }
 
-sealed class Player(val disk: Cell, val opposite: Player) {
-    object White : Player(Cell.WhiteDisk, Black)
+sealed class Player {
+    abstract val disk: Cell
+    abstract val opposite: Player
+    object White : Player() {
+        override val disk = Cell.WhiteDisk
+        override val opposite = Black
+    }
 
-    object Black : Player(Cell.BlackDisk, White)
+    object Black : Player() {
+        override val disk = Cell.BlackDisk
+        override val opposite = White
+    }
 }
 
-sealed class Cell(val opposite: Cell) {
-    object Empty : Cell(Empty)
+sealed class Cell {
+    abstract val opposite: Cell?
+    object Empty : Cell() {
+        override val opposite = null
+    }
 
-    object WhiteDisk : Cell(BlackDisk)
+    object WhiteDisk : Cell() {
+        override val opposite = BlackDisk
+    }
 
-    object BlackDisk : Cell(WhiteDisk)
+    object BlackDisk : Cell() {
+        override val opposite = WhiteDisk
+    }
 }
 
 class List2dMut<E>(val l: MutableList<E>, val s: Int) {

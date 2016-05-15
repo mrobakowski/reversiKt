@@ -17,6 +17,12 @@ repositories {
 apply plugin: 'kotlin'
 apply plugin: 'idea'
 
+idea {
+    module {
+        downloadSources = true
+    }
+}
+
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:1.0.1"
     compile 'no.tornado:tornadofx:1.4.5'

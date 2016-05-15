@@ -1,19 +1,19 @@
 import javafx.geometry.HPos
-import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.geometry.VPos
 import javafx.scene.control.Control
 import javafx.scene.layout.*
-import javafx.scene.paint.Paint
-import tornadofx.View
-import tornadofx.center
-import tornadofx.gridpane
-import tornadofx.stackpane
+import tornadofx.*
 
 class MainWindow : View() {
     override val root = BorderPane()
 
     init {
+        Thread.setDefaultUncaughtExceptionHandler { th, ex ->
+            ex.printStackTrace()
+        }
+        importStylesheet(Styles::class)
+
         val size = 8
         val cellSize = 50.0
 
@@ -21,6 +21,9 @@ class MainWindow : View() {
         primaryStage.minWidth = size * cellSize + 16
 
         val cellUis = Array<Pane?>(size * size) { null }
+        var uiList: List<Pane> = listOf()
+
+        var board = Board(size)
 
         root.center {
             stackpane {
@@ -28,13 +31,13 @@ class MainWindow : View() {
                     for (row in 0..size - 1) {
                         for (column in 0..size - 1) {
                             val cellUi = StackPane().apply {
-                                style = """
-                                    -fx-background-color: green;
-                                    -fx-border-color: black;
-                                    -fx-border-insets: 0;
-                                    -fx-border-width: 1;
-                                    -fx-border-style: solid;
-                                """
+                                addClass(Styles.cell)
+                                setOnMouseClicked {
+                                    board.play(row to column)?.let {
+                                        board = it
+                                        board.applyToUi(uiList)
+                                    }
+                                }
                             }
                             cellUis[column * size + row] = cellUi
                             add(cellUi, row, column)
@@ -68,14 +71,11 @@ class MainWindow : View() {
                     maxHeight = Control.USE_PREF_SIZE
                     minWidth = Control.USE_PREF_SIZE
                     minHeight = Control.USE_PREF_SIZE
-                    background = Background(BackgroundFill(Paint.valueOf("blue"), CornerRadii.EMPTY, Insets.EMPTY))
                 }
                 StackPane.setAlignment(grid, Pos.CENTER)
-                background = Background(BackgroundFill(Paint.valueOf("black"), CornerRadii.EMPTY, Insets.EMPTY))
             }
         }
-
-        val board = Board(size)
-        board.applyToUi(cellUis.filterNotNull().toList())
+        uiList = cellUis.filterNotNull().toList()
+        board.applyToUi(uiList)
     }
 }
