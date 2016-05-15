@@ -13,13 +13,13 @@ private val directions = listOf(
 )
 
 data class Board private constructor(val cells: List<Cell>, val size: Int, val currentPlayer: Player) {
-    val playableCells by lazy {
+    val legalMoves by lazy {
         val res = mutableSetOf<Pair<Int, Int>>()
         for (row in 0..size - 1) {
             for (col in 0..size - 1) {
                 val pos = row to col
                 if (this[row, col] == Cell.Empty &&
-                    directions.any { checkDirection(it, pos) })
+                        directions.any { checkDirection(it, pos) })
                     res += pos
             }
         }
@@ -65,7 +65,7 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
             val ui = uis[i]
             ui.children.clear()
             ui.removeClass(Styles.legalCell)
-            if (row to col in playableCells) ui.addClass(Styles.legalCell)
+            if (row to col in legalMoves) ui.addClass(Styles.legalCell)
             when (cell) {
                 is Cell.WhiteDisk -> addDisk(Styles.whiteDisk, ui)
                 is Cell.BlackDisk -> addDisk(Styles.blackDisk, ui)
@@ -96,13 +96,37 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
     }
 
     private fun canPlay(at: Pair<Int, Int>): Boolean {
-        return at in playableCells
+        return at in legalMoves
     }
+
+    val maxPlayerDisks by lazy {
+        cells.count { it == maxPlayer.disk }
+    }
+
+    val minPlayerDisks by lazy {
+        cells.count { it == minPlayer.disk }
+    }
+
+    val maxPlayerActualMobility by lazy {
+        if (currentPlayer == maxPlayer)
+            legalMoves.size
+        else
+            copy(currentPlayer = currentPlayer.opposite).legalMoves.size
+    }
+
+    val minPlayerActualMobility by lazy {
+        if (currentPlayer == minPlayer)
+            legalMoves.size
+        else
+            copy(currentPlayer = currentPlayer.opposite).legalMoves.size
+    }
+
 }
 
 sealed class Player {
     abstract val disk: Cell
     abstract val opposite: Player
+
     object White : Player() {
         override val disk = Cell.WhiteDisk
         override val opposite = Black
@@ -116,6 +140,7 @@ sealed class Player {
 
 sealed class Cell {
     abstract val opposite: Cell?
+
     object Empty : Cell() {
         override val opposite = null
     }
