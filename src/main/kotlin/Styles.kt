@@ -8,6 +8,8 @@ class Styles: Stylesheet() {
         val whiteDisk by cssclass()
         val blackDisk by cssclass()
         val legalCell by cssclass()
+        val btn by cssclass()
+        val btnContainer by cssclass()
     }
 
     init {
@@ -35,6 +37,15 @@ class Styles: Stylesheet() {
         s(blackDisk) {
             mix(disk)
             backgroundColor = Color.BLACK
+        }
+
+        s(btn) {
+            endMargin = 5.px
+            startMargin = 5.px
+        }
+
+        s(btnContainer) {
+            padding = box(5.px)
         }
     }
 }

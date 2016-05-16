@@ -2,7 +2,7 @@ val maxPlayer = Player.Black
 val minPlayer = maxPlayer.opposite
 
 fun heuristics(b: Board): Double {
-    val cp = coinParity(b)
+    val cp = diskParity(b)
     val am = actualMobility(b)
     val co = cornerOccupancy(b)
     return 800.0 * co + 10 * cp + 70 * am
@@ -29,7 +29,7 @@ fun actualMobility(b: Board) = if (b.maxPlayerActualMobility + b.minPlayerActual
     0
 }
 
-fun coinParity(b: Board) = 100 * (b.maxPlayerDisks - b.minPlayerDisks) / (b.maxPlayerDisks + b.minPlayerDisks)
+fun diskParity(b: Board) = 100 * (b.maxPlayerDisks - b.minPlayerDisks) / (b.maxPlayerDisks + b.minPlayerDisks)
 
 fun alphabeta(board: Board, depth: Int, alpha: Double, beta: Double, isMaxPlayer: Boolean): Pair<Double, Pair<Int, Int>?> {
     var alpha = alpha

@@ -42,7 +42,7 @@ class MainWindow : View() {
                                         println("AI's turn!")
                                         runAsync {
                                             busy = true
-                                            Thread.sleep(1000)
+                                            Thread.sleep(200)
                                             alphabeta(board, 3, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
                                         } ui {
                                             println(it)
@@ -94,24 +94,37 @@ class MainWindow : View() {
                 StackPane.setAlignment(grid, Pos.CENTER)
             }
             root.bottom {
-                button("Pass") {
-                    setOnAction {
-                        if (!busy) {
-                            board = board.copy(currentPlayer = board.currentPlayer.opposite)
+                hbox {
+                    addClass(Styles.btnContainer)
+                    button("Pass") {
+                        addClass(Styles.btn)
+                        setOnAction {
+                            if (!busy) {
+                                board = board.copy(currentPlayer = board.currentPlayer.opposite)
 
-                            runAsync {
-                                busy = true
-                                alphabeta(board, 3, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
-                            } ui {
-                                println(it)
-                                it.second?.let {
-                                    board.play(it)?.let {
-                                        board = it
-                                        board.applyToUi(uiList)
+                                runAsync {
+                                    busy = true
+                                    alphabeta(board, 3, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
+                                } ui {
+                                    println(it)
+                                    it.second?.let {
+                                        board.play(it)?.let {
+                                            board = it
+                                            board.applyToUi(uiList)
+                                        }
                                     }
+                                    busy = false
+                                    println("Player's turn!")
                                 }
-                                busy = false
-                                println("Player's turn!")
+                            }
+                        }
+                    }
+                    button("Reset") {
+                        addClass(Styles.btn)
+                        setOnAction {
+                            if (!busy) {
+                                board = Board(size)
+                                board.applyToUi(uiList)
                             }
                         }
                     }
