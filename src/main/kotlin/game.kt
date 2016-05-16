@@ -86,9 +86,14 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
 
         for (direction in directions) {
             var pos = direction(at)
+            val toChange = ArrayList<Pair<Int, Int>>(8)
+            toChange += pos
             while (pos in boardMut && boardMut[pos] == currentPlayer.opposite.disk) {
-                boardMut[pos] = currentPlayer.disk
+                toChange += pos
                 pos = direction(pos)
+            }
+            if (pos in boardMut && boardMut[pos] == currentPlayer.disk) {
+                toChange.forEach { boardMut[it] = currentPlayer.disk }
             }
         }
 

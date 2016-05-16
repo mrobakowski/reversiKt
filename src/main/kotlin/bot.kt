@@ -1,4 +1,4 @@
-val maxPlayer = Player.White
+val maxPlayer = Player.Black
 val minPlayer = maxPlayer.opposite
 
 fun heuristics(b: Board): Double {
@@ -19,6 +19,7 @@ fun cornerOccupancy(b: Board): Int {
             }
         }
     }
+
     return 25 * (maxCorners - minCorners)
 }
 
@@ -30,26 +31,26 @@ fun actualMobility(b: Board) = if (b.maxPlayerActualMobility + b.minPlayerActual
 
 fun coinParity(b: Board) = 100 * (b.maxPlayerDisks - b.minPlayerDisks) / (b.maxPlayerDisks + b.minPlayerDisks)
 
-fun alphabeta(node: Board, depth: Int, alpha: Double, beta: Double, isMaxPlayer: Boolean): Double {
+fun alphabeta(board: Board, depth: Int, alpha: Double, beta: Double, isMaxPlayer: Boolean): Pair<Double, Pair<Int, Int>?> {
     var alpha = alpha
     var beta = beta
-    if (depth == 0 || node.legalMoves.isEmpty())
-        return heuristics(node)
+    if (depth == 0 || board.legalMoves.isEmpty())
+        return heuristics(board) to null
     if (isMaxPlayer) {
-        var v = Double.NEGATIVE_INFINITY
-        for (child in node.legalMoves) {
-            v = Math.max(v, alphabeta(node.play(child)!!, depth - 1, alpha, beta, false))
-            alpha = Math.max(alpha, v)
+        var bestMove = Double.NEGATIVE_INFINITY to null as Pair<Int, Int>?
+        for (move in board.legalMoves) {
+            bestMove = listOf(bestMove, alphabeta(board.play(move)!!, depth - 1, alpha, beta, false).first to move).maxBy { it.first }!!
+            alpha = Math.max(alpha, bestMove.first)
             if (beta <= alpha) break
         }
-        return v
+        return bestMove
     } else {
-        var v = Double.POSITIVE_INFINITY
-        for (child in node.legalMoves) {
-            v = Math.min(v, alphabeta(node.play(child)!!, depth - 1, alpha, beta, true))
-            beta = Math.min(beta, v)
-            if (beta < alpha) break
+        var bestMove = Double.POSITIVE_INFINITY to null as Pair<Int, Int>?
+        for (child in board.legalMoves) {
+            bestMove = listOf(bestMove, alphabeta(board.play(child)!!, depth - 1, alpha, beta, false).first to child).minBy { it.first }!!
+            beta = Math.min(beta, bestMove.first)
+            if (beta <= alpha) break
         }
-        return v
+        return bestMove
     }
 }
