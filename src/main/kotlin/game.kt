@@ -104,26 +104,36 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
         return at in legalMoves
     }
 
-    val maxPlayerDisks by lazy {
-        cells.count { it == maxPlayer.disk }
+    val blackPlayerDisks by lazy {
+        cells.count { it == Player.Black.disk }
     }
 
-    val minPlayerDisks by lazy {
-        cells.count { it == minPlayer.disk }
+    val whitePlayerDisks by lazy {
+        cells.count { it == Player.Black.opposite.disk }
     }
 
-    val maxPlayerActualMobility by lazy {
-        if (currentPlayer == maxPlayer)
+    fun numDisksOf(p: Player) = when (p) {
+        is Player.White -> whitePlayerActualMobility
+        is Player.Black -> blackPlayerActualMobility
+    }
+
+    val blackPlayerActualMobility by lazy {
+        if (currentPlayer == Player.Black)
             legalMoves.size
         else
-            copy(currentPlayer = currentPlayer.opposite).legalMoves.size
+            copy(currentPlayer = Player.Black).legalMoves.size
     }
 
-    val minPlayerActualMobility by lazy {
-        if (currentPlayer == minPlayer)
+    val whitePlayerActualMobility by lazy {
+        if (currentPlayer == Player.White)
             legalMoves.size
         else
-            copy(currentPlayer = currentPlayer.opposite).legalMoves.size
+            copy(currentPlayer = Player.White).legalMoves.size
+    }
+
+    fun actualMobility(p: Player) = when (p) {
+        is Player.Black -> blackPlayerActualMobility
+        is Player.White -> whitePlayerActualMobility
     }
 
 }

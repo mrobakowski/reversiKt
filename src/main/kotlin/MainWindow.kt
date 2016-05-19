@@ -14,7 +14,6 @@ class MainWindow : View() {
         }
         importStylesheet(Styles::class)
 
-
         val size = 8
         val cellSize = 50.0
 
@@ -26,6 +25,8 @@ class MainWindow : View() {
 
         var board = Board(size)
         var busy = false
+
+        val bot: Bot = AlphaBetaBot(Player.Black, 5)
 
         root.center {
             stackpane {
@@ -43,7 +44,7 @@ class MainWindow : View() {
                                         runAsync {
                                             busy = true
                                             Thread.sleep(200)
-                                            alphabeta(board, 3, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
+                                            bot.getMove(board)
                                         } ui {
                                             println(it)
                                             it.second?.let {
@@ -104,7 +105,7 @@ class MainWindow : View() {
 
                                 runAsync {
                                     busy = true
-                                    alphabeta(board, 3, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
+                                    bot.getMove(board)
                                 } ui {
                                     println(it)
                                     it.second?.let {
