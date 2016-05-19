@@ -113,8 +113,8 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
     }
 
     fun numDisksOf(p: Player) = when (p) {
-        is Player.White -> whitePlayerActualMobility
-        is Player.Black -> blackPlayerActualMobility
+        is Player.White -> whitePlayerDisks
+        is Player.Black -> blackPlayerDisks
     }
 
     val blackPlayerActualMobility by lazy {
