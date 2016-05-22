@@ -1,32 +1,95 @@
+import GamePlayer.Computer
+import GamePlayer.Human
+import Player.Black
+import Player.White
 import javafx.geometry.HPos
 import javafx.geometry.Pos
 import javafx.geometry.VPos
 import javafx.scene.control.Control
+import javafx.scene.input.MouseEvent
 import javafx.scene.layout.*
 import tornadofx.*
 
 class MainWindow : View() {
     override val root = BorderPane()
+    var board: Board
+
+    var blackPlayer: GamePlayer
+    var whitePlayer: GamePlayer
+    var aiBusy = false
+    var uiList: List<Pane>
+    val size = 8
+
+    val currentPlayer: GamePlayer
+        get() = when (board.currentPlayer) {
+            is Black -> blackPlayer
+            is White -> whitePlayer
+        }
+
+    val canHumanPlay: Boolean
+        get() = !aiBusy && currentPlayer is Human
+
+    fun humanBoardPlay(row: Int, column: Int) {
+        if (canHumanPlay) {
+            board.play(row to column)?.let {
+                board = it
+                board.applyToUi(uiList)
+                println("${board.currentPlayer}'s turn!")
+//                aiBoardPlay()
+            }
+        }
+    }
+
+    fun aiBoardPlay() {
+        aiBusy = true
+        val bot = (currentPlayer as? Computer)?.bot ?: throw IllegalStateException("current player isn't a bot")
+        runAsync {
+            bot.getMove(board)
+        } ui {
+            println(it)
+            val pos = it.second
+            if (pos != null) {
+                board.play(pos)?.let {
+                    board = it
+                    board.applyToUi(uiList)
+                }
+            } else {
+                println("AI passes");
+                board = board.copy(currentPlayer = board.currentPlayer.opposite)
+            }
+            aiBusy = false
+            println("Player's turn!")
+        }
+    }
 
     init {
         Thread.setDefaultUncaughtExceptionHandler { th, ex ->
             ex.printStackTrace()
+            System.exit(1)
         }
         importStylesheet(Styles::class)
 
-        val size = 8
         val cellSize = 50.0
 
         primaryStage.minHeight = size * cellSize + 39
         primaryStage.minWidth = size * cellSize + 16
 
         val cellUis = Array<Pane?>(size * size) { null }
-        var uiList: List<Pane> = listOf()
 
-        var board = Board(size)
-        var busy = false
+        board = Board(size)
 
-        val bot: Bot = AlphaBetaBot(Player.Black, 5)
+//        val playerBoardPlay = { row: Int, column: Int ->
+//            { ev: MouseEvent ->
+//                if (canHumanPlay) {
+//                    board.play(row to column)?.let {
+//                        board = it
+//                        board.applyToUi(uiList)
+//                        println("AI's turn!")
+//                        aiBoardPlay()
+//                    }
+//                }
+//            }
+//        }
 
         root.center {
             stackpane {
@@ -36,27 +99,7 @@ class MainWindow : View() {
                             val cellUi = StackPane().apply {
                                 addClass(Styles.cell)
                                 setOnMouseClicked {
-                                    if (busy) return@setOnMouseClicked
-                                    board.play(row to column)?.let {
-                                        board = it
-                                        board.applyToUi(uiList)
-                                        println("AI's turn!")
-                                        runAsync {
-                                            busy = true
-                                            Thread.sleep(200)
-                                            bot.getMove(board)
-                                        } ui {
-                                            println(it)
-                                            it.second?.let {
-                                                board.play(it)?.let {
-                                                    board = it
-                                                    board.applyToUi(uiList)
-                                                }
-                                            }
-                                            busy = false
-                                            println("Player's turn!")
-                                        }
-                                    }
+                                    humanBoardPlay(row, column)
                                 }
                             }
                             cellUis[column * size + row] = cellUi
@@ -84,13 +127,14 @@ class MainWindow : View() {
                         )
                     }
                     //endregion
-
+                    //region sizes
                     prefHeight = size * cellSize
                     prefWidth = size * cellSize
                     maxWidth = Control.USE_PREF_SIZE
                     maxHeight = Control.USE_PREF_SIZE
                     minWidth = Control.USE_PREF_SIZE
                     minHeight = Control.USE_PREF_SIZE
+                    //endregion
                 }
                 StackPane.setAlignment(grid, Pos.CENTER)
             }
@@ -100,33 +144,16 @@ class MainWindow : View() {
                     button("Pass") {
                         addClass(Styles.btn)
                         setOnAction {
-                            if (!busy) {
+                            if (!aiBusy) {
                                 board = board.copy(currentPlayer = board.currentPlayer.opposite)
-
-                                runAsync {
-                                    busy = true
-                                    bot.getMove(board)
-                                } ui {
-                                    println(it)
-                                    it.second?.let {
-                                        board.play(it)?.let {
-                                            board = it
-                                            board.applyToUi(uiList)
-                                        }
-                                    }
-                                    busy = false
-                                    println("Player's turn!")
-                                }
+                                aiBoardPlay()
                             }
                         }
                     }
                     button("Reset") {
                         addClass(Styles.btn)
                         setOnAction {
-                            if (!busy) {
-                                board = Board(size)
-                                board.applyToUi(uiList)
-                            }
+                            reset()
                         }
                     }
                 }
@@ -135,4 +162,16 @@ class MainWindow : View() {
         uiList = cellUis.filterNotNull().toList()
         board.applyToUi(uiList)
     }
+
+    private fun reset() {
+        if (!aiBusy) {
+            board = Board(size)
+            board.applyToUi(uiList)
+        }
+    }
+}
+
+sealed class GamePlayer {
+    object Human : GamePlayer()
+    class Computer(val bot: Bot) : GamePlayer()
 }

@@ -46,6 +46,7 @@ class Styles: Stylesheet() {
 
         s(btnContainer) {
             padding = box(5.px)
+            spacing = 5.px
         }
     }
 }
