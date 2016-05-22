@@ -16,8 +16,8 @@ abstract class Bot(val maxPlayer: Player) {
         for (i in listOf(0, b.size - 1)) {
             for (j in listOf(0, b.size - 1)) {
                 when (b[i, j]) {
-                    Player.Black.disk -> maxCorners++
-                    Player.Black.opposite.disk -> minCorners++
+                    maxPlayer.disk -> maxCorners++
+                    minPlayer.disk -> minCorners++
                 }
             }
         }
@@ -40,7 +40,7 @@ abstract class Bot(val maxPlayer: Player) {
 
 class AlphaBetaBot(maxPlayer: Player, val depth: Int) : Bot(maxPlayer) {
     override fun getMove(board: Board): Pair<Double, Pair<Int, Int>?> =
-            alphaBeta(board, depth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, true)
+            alphaBeta(board, depth, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, board.currentPlayer == maxPlayer)
 
     private val c = Comparator<Pair<Double, Pair<Int, Int>?>> { a, b -> a.first.compareTo(b.first) }
 

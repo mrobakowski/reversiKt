@@ -105,11 +105,11 @@ data class Board private constructor(val cells: List<Cell>, val size: Int, val c
     }
 
     val blackPlayerDisks by lazy {
-        cells.count { it == Player.Black.disk }
+        cells.count { it == Cell.BlackDisk }
     }
 
     val whitePlayerDisks by lazy {
-        cells.count { it == Player.Black.opposite.disk }
+        cells.count { it == Cell.WhiteDisk }
     }
 
     fun numDisksOf(p: Player) = when (p) {

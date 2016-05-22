@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40408c50-4d38-40b0-ad01-f5a7cd916e25" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/kotlin/bot.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reversiKt.ipr" afterPath="$PROJECT_DIR$/reversiKt.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reversiKt.iws" afterPath="$PROJECT_DIR$/reversiKt.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/MainWindow.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/MainWindow.kt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/bot.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/bot.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/kotlin/game.kt" afterPath="$PROJECT_DIR$/src/main/kotlin/game.kt" />
     </list>
     <ignored path="reversiKt.ipr.iws" />
@@ -84,11 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file leaf-file-name="bot.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/bot.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -97,31 +99,11 @@
       <file leaf-file-name="game.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/game.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+            <state relative-caret-position="-102">
+              <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
               <folding>
-                <element signature="e#0#158#0" expanded="true" />
+                <marker date="1463953879033" expanded="true" signature="3572:3586" placeholder="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bot.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/bot.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Lazy.kt" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Lazy.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -129,132 +111,11 @@
       <file leaf-file-name="MainWindow.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="536">
+              <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
               <folding>
-                <element signature="e#0#166#0" expanded="true" />
-                <element signature="e#1508#1528#0" expanded="false" />
+                <element signature="e#2919#2939#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Synchronized.kt" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Synchronized.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Styles.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/Styles.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#95#0" expanded="true" />
-                <marker date="1463331289576" expanded="true" signature="124:916" placeholder="{...}" />
-                <marker date="1463331289576" expanded="true" signature="304:914" placeholder="{...}" />
-                <marker date="1463331289576" expanded="true" signature="322:504" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColumnConstraints.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1326">
-              <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#12356#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#2148#2149#0" expanded="false" />
-                <element signature="e#2171#2172#0" expanded="false" />
-                <element signature="e#3904#3905#0" expanded="false" />
-                <element signature="e#3949#3950#0" expanded="false" />
-                <element signature="e#3990#3991#0" expanded="false" />
-                <element signature="e#4066#4067#0" expanded="false" />
-                <element signature="e#4293#4294#0" expanded="false" />
-                <element signature="e#4348#4349#0" expanded="false" />
-                <element signature="e#4417#4418#0" expanded="false" />
-                <element signature="e#4486#4487#0" expanded="false" />
-                <element signature="e#4555#4556#0" expanded="false" />
-                <element signature="e#4612#4613#0" expanded="false" />
-                <element signature="e#5047#5048#0" expanded="false" />
-                <element signature="e#5093#5094#0" expanded="false" />
-                <element signature="e#5135#5136#0" expanded="false" />
-                <element signature="e#5213#5214#0" expanded="false" />
-                <element signature="e#5443#5444#0" expanded="false" />
-                <element signature="e#5498#5499#0" expanded="false" />
-                <element signature="e#5567#5568#0" expanded="false" />
-                <element signature="e#5636#5637#0" expanded="false" />
-                <element signature="e#5705#5706#0" expanded="false" />
-                <element signature="e#5763#5764#0" expanded="false" />
-                <element signature="e#6192#6193#0" expanded="false" />
-                <element signature="e#6237#6238#0" expanded="false" />
-                <element signature="e#6278#6279#0" expanded="false" />
-                <element signature="e#6354#6355#0" expanded="false" />
-                <element signature="e#6581#6582#0" expanded="false" />
-                <element signature="e#6636#6637#0" expanded="false" />
-                <element signature="e#6705#6706#0" expanded="false" />
-                <element signature="e#6774#6775#0" expanded="false" />
-                <element signature="e#6843#6844#0" expanded="false" />
-                <element signature="e#6900#6901#0" expanded="false" />
-                <element signature="e#7418#7419#0" expanded="false" />
-                <element signature="e#7467#7468#0" expanded="false" />
-                <element signature="e#7512#7513#0" expanded="false" />
-                <element signature="e#7581#7582#0" expanded="false" />
-                <element signature="e#7805#7806#0" expanded="false" />
-                <element signature="e#7860#7861#0" expanded="false" />
-                <element signature="e#7929#7930#0" expanded="false" />
-                <element signature="e#7998#7999#0" expanded="false" />
-                <element signature="e#8067#8068#0" expanded="false" />
-                <element signature="e#8128#8129#0" expanded="false" />
-                <element signature="e#8759#8760#0" expanded="false" />
-                <element signature="e#8801#8802#0" expanded="false" />
-                <element signature="e#8841#8842#0" expanded="false" />
-                <element signature="e#8898#8899#0" expanded="false" />
-                <element signature="e#9119#9120#0" expanded="false" />
-                <element signature="e#9174#9175#0" expanded="false" />
-                <element signature="e#9243#9244#0" expanded="false" />
-                <element signature="e#9312#9313#0" expanded="false" />
-                <element signature="e#9381#9382#0" expanded="false" />
-                <element signature="e#9435#9436#0" expanded="false" />
-                <element signature="e#9891#9892#0" expanded="false" />
-                <element signature="e#9938#9939#0" expanded="false" />
-                <element signature="e#9979#9980#0" expanded="false" />
-                <element signature="e#10046#10047#0" expanded="false" />
-                <element signature="e#10274#10275#0" expanded="false" />
-                <element signature="e#10329#10330#0" expanded="false" />
-                <element signature="e#10398#10399#0" expanded="false" />
-                <element signature="e#10467#10468#0" expanded="false" />
-                <element signature="e#10536#10537#0" expanded="false" />
-                <element signature="e#10595#10596#0" expanded="false" />
-                <element signature="e#11043#11044#0" expanded="false" />
-                <element signature="e#11089#11090#0" expanded="false" />
-                <element signature="e#11131#11132#0" expanded="false" />
-                <element signature="e#11196#11197#0" expanded="false" />
-                <element signature="e#11415#11416#0" expanded="false" />
-                <element signature="e#11470#11471#0" expanded="false" />
-                <element signature="e#11539#11540#0" expanded="false" />
-                <element signature="e#11608#11609#0" expanded="false" />
-                <element signature="e#11677#11678#0" expanded="false" />
-                <element signature="e#11735#11736#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReversiKtApp.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/ReversiKtApp.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -440,7 +301,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="2925806435774" />
+        <entry key="$PROJECT_DIR$" value="2926422180652" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -617,9 +478,9 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/Stylesheets.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/Styles.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/MainWindow.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/game.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/bot.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/MainWindow.kt" />
       </list>
     </option>
   </component>
@@ -700,9 +561,6 @@
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -718,9 +576,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -799,6 +654,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -831,7 +689,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/modules/reversiKt_main.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/modules/reversiKt_test.iml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/build.gradle</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/kotlin/MainWindow.kt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/kotlin/Styles.kt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/kotlin/bot.kt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/kotlin/game.kt</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -839,7 +703,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/kotlin/game.kt</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -1379,7 +1242,10 @@
       <workItem from="1463141743716" duration="43000" />
       <workItem from="1463142038517" duration="13000" />
       <workItem from="1463142075728" duration="39000" />
-      <workItem from="1463311262338" duration="11869000" />
+      <workItem from="1463311262338" duration="11913000" />
+      <workItem from="1463417848780" duration="1062000" />
+      <workItem from="1463588873624" duration="14000" />
+      <workItem from="1463947587924" duration="3637000" />
     </task>
     <task id="LOCAL-00001" summary="Finish implementing the core game. Migrate to type-safe css.">
       <created>1463334332026</created>
@@ -1388,48 +1254,55 @@
       <option name="project" value="LOCAL" />
       <updated>1463334332026</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Start implementing the ai">
+      <created>1463349300868</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1463349300868</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15826000" />
+    <option name="totallyTimeSpent" value="20583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="ASM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23151125" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23151125" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23151125" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15618336" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="ASM" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin Bytecode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="866" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="92" y="92" width="1736" height="866" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1445,12 +1318,21 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Finish implementing the core game. Migrate to type-safe css." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish implementing the core game. Migrate to type-safe css." />
+    <MESSAGE value="Start implementing the ai" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start implementing the ai" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1459,21 +1341,81 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ReversiKtApp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/game.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="114" column="41" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+          <folding>
+            <marker date="1463953879033" expanded="true" signature="3572:3586" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/bot.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Lazy.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="612">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
           <folding>
-            <element signature="e#0#166#0" expanded="true" />
-            <element signature="e#1508#1528#0" expanded="false" />
+            <element signature="e#2919#2939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Synchronized.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Styles.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+          <folding>
+            <marker date="1463947594527" expanded="true" signature="147:292" placeholder="{...}" />
+            <marker date="1463947594527" expanded="true" signature="1124:1161" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -1482,82 +1424,86 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ReversiKtApp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/game.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
           <folding>
-            <element signature="e#0#12356#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2148#2149#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#3904#3905#0" expanded="false" />
-            <element signature="e#3949#3950#0" expanded="false" />
-            <element signature="e#3990#3991#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4293#4294#0" expanded="false" />
-            <element signature="e#4348#4349#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4486#4487#0" expanded="false" />
-            <element signature="e#4555#4556#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-            <element signature="e#5093#5094#0" expanded="false" />
-            <element signature="e#5135#5136#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="e#5443#5444#0" expanded="false" />
-            <element signature="e#5498#5499#0" expanded="false" />
-            <element signature="e#5567#5568#0" expanded="false" />
-            <element signature="e#5636#5637#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5763#5764#0" expanded="false" />
-            <element signature="e#6192#6193#0" expanded="false" />
-            <element signature="e#6237#6238#0" expanded="false" />
-            <element signature="e#6278#6279#0" expanded="false" />
-            <element signature="e#6354#6355#0" expanded="false" />
-            <element signature="e#6581#6582#0" expanded="false" />
-            <element signature="e#6636#6637#0" expanded="false" />
-            <element signature="e#6705#6706#0" expanded="false" />
-            <element signature="e#6774#6775#0" expanded="false" />
-            <element signature="e#6843#6844#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-            <element signature="e#7418#7419#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7512#7513#0" expanded="false" />
-            <element signature="e#7581#7582#0" expanded="false" />
-            <element signature="e#7805#7806#0" expanded="false" />
-            <element signature="e#7860#7861#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8759#8760#0" expanded="false" />
-            <element signature="e#8801#8802#0" expanded="false" />
-            <element signature="e#8841#8842#0" expanded="false" />
-            <element signature="e#8898#8899#0" expanded="false" />
-            <element signature="e#9119#9120#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9243#9244#0" expanded="false" />
-            <element signature="e#9312#9313#0" expanded="false" />
-            <element signature="e#9381#9382#0" expanded="false" />
-            <element signature="e#9435#9436#0" expanded="false" />
-            <element signature="e#9891#9892#0" expanded="false" />
-            <element signature="e#9938#9939#0" expanded="false" />
-            <element signature="e#9979#9980#0" expanded="false" />
-            <element signature="e#10046#10047#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#10329#10330#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10467#10468#0" expanded="false" />
-            <element signature="e#10536#10537#0" expanded="false" />
-            <element signature="e#10595#10596#0" expanded="false" />
-            <element signature="e#11043#11044#0" expanded="false" />
-            <element signature="e#11089#11090#0" expanded="false" />
-            <element signature="e#11131#11132#0" expanded="false" />
-            <element signature="e#11196#11197#0" expanded="false" />
-            <element signature="e#11415#11416#0" expanded="false" />
-            <element signature="e#11470#11471#0" expanded="false" />
-            <element signature="e#11539#11540#0" expanded="false" />
-            <element signature="e#11608#11609#0" expanded="false" />
-            <element signature="e#11677#11678#0" expanded="false" />
-            <element signature="e#11735#11736#0" expanded="false" />
+            <marker date="1463953879033" expanded="true" signature="3572:3586" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/bot.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Lazy.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+          <folding>
+            <element signature="e#2919#2939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Synchronized.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Styles.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+          <folding>
+            <marker date="1463947594527" expanded="true" signature="147:292" placeholder="{...}" />
+            <marker date="1463947594527" expanded="true" signature="1124:1161" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1582,8 +1528,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#166#0" expanded="true" />
-            <element signature="e#1508#1528#0" expanded="false" />
+            <element signature="e#2919#2939#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1592,82 +1537,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#12356#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2148#2149#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#3904#3905#0" expanded="false" />
-            <element signature="e#3949#3950#0" expanded="false" />
-            <element signature="e#3990#3991#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4293#4294#0" expanded="false" />
-            <element signature="e#4348#4349#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4486#4487#0" expanded="false" />
-            <element signature="e#4555#4556#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-            <element signature="e#5093#5094#0" expanded="false" />
-            <element signature="e#5135#5136#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="e#5443#5444#0" expanded="false" />
-            <element signature="e#5498#5499#0" expanded="false" />
-            <element signature="e#5567#5568#0" expanded="false" />
-            <element signature="e#5636#5637#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5763#5764#0" expanded="false" />
-            <element signature="e#6192#6193#0" expanded="false" />
-            <element signature="e#6237#6238#0" expanded="false" />
-            <element signature="e#6278#6279#0" expanded="false" />
-            <element signature="e#6354#6355#0" expanded="false" />
-            <element signature="e#6581#6582#0" expanded="false" />
-            <element signature="e#6636#6637#0" expanded="false" />
-            <element signature="e#6705#6706#0" expanded="false" />
-            <element signature="e#6774#6775#0" expanded="false" />
-            <element signature="e#6843#6844#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-            <element signature="e#7418#7419#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7512#7513#0" expanded="false" />
-            <element signature="e#7581#7582#0" expanded="false" />
-            <element signature="e#7805#7806#0" expanded="false" />
-            <element signature="e#7860#7861#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8759#8760#0" expanded="false" />
-            <element signature="e#8801#8802#0" expanded="false" />
-            <element signature="e#8841#8842#0" expanded="false" />
-            <element signature="e#8898#8899#0" expanded="false" />
-            <element signature="e#9119#9120#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9243#9244#0" expanded="false" />
-            <element signature="e#9312#9313#0" expanded="false" />
-            <element signature="e#9381#9382#0" expanded="false" />
-            <element signature="e#9435#9436#0" expanded="false" />
-            <element signature="e#9891#9892#0" expanded="false" />
-            <element signature="e#9938#9939#0" expanded="false" />
-            <element signature="e#9979#9980#0" expanded="false" />
-            <element signature="e#10046#10047#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#10329#10330#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10467#10468#0" expanded="false" />
-            <element signature="e#10536#10537#0" expanded="false" />
-            <element signature="e#10595#10596#0" expanded="false" />
-            <element signature="e#11043#11044#0" expanded="false" />
-            <element signature="e#11089#11090#0" expanded="false" />
-            <element signature="e#11131#11132#0" expanded="false" />
-            <element signature="e#11196#11197#0" expanded="false" />
-            <element signature="e#11415#11416#0" expanded="false" />
-            <element signature="e#11470#11471#0" expanded="false" />
-            <element signature="e#11539#11540#0" expanded="false" />
-            <element signature="e#11608#11609#0" expanded="false" />
-            <element signature="e#11677#11678#0" expanded="false" />
-            <element signature="e#11735#11736#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1692,8 +1562,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#166#0" expanded="true" />
-            <element signature="e#1508#1528#0" expanded="false" />
+            <element signature="e#2919#2939#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1702,82 +1571,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#12356#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2148#2149#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#3904#3905#0" expanded="false" />
-            <element signature="e#3949#3950#0" expanded="false" />
-            <element signature="e#3990#3991#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4293#4294#0" expanded="false" />
-            <element signature="e#4348#4349#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4486#4487#0" expanded="false" />
-            <element signature="e#4555#4556#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-            <element signature="e#5093#5094#0" expanded="false" />
-            <element signature="e#5135#5136#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="e#5443#5444#0" expanded="false" />
-            <element signature="e#5498#5499#0" expanded="false" />
-            <element signature="e#5567#5568#0" expanded="false" />
-            <element signature="e#5636#5637#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5763#5764#0" expanded="false" />
-            <element signature="e#6192#6193#0" expanded="false" />
-            <element signature="e#6237#6238#0" expanded="false" />
-            <element signature="e#6278#6279#0" expanded="false" />
-            <element signature="e#6354#6355#0" expanded="false" />
-            <element signature="e#6581#6582#0" expanded="false" />
-            <element signature="e#6636#6637#0" expanded="false" />
-            <element signature="e#6705#6706#0" expanded="false" />
-            <element signature="e#6774#6775#0" expanded="false" />
-            <element signature="e#6843#6844#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-            <element signature="e#7418#7419#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7512#7513#0" expanded="false" />
-            <element signature="e#7581#7582#0" expanded="false" />
-            <element signature="e#7805#7806#0" expanded="false" />
-            <element signature="e#7860#7861#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8759#8760#0" expanded="false" />
-            <element signature="e#8801#8802#0" expanded="false" />
-            <element signature="e#8841#8842#0" expanded="false" />
-            <element signature="e#8898#8899#0" expanded="false" />
-            <element signature="e#9119#9120#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9243#9244#0" expanded="false" />
-            <element signature="e#9312#9313#0" expanded="false" />
-            <element signature="e#9381#9382#0" expanded="false" />
-            <element signature="e#9435#9436#0" expanded="false" />
-            <element signature="e#9891#9892#0" expanded="false" />
-            <element signature="e#9938#9939#0" expanded="false" />
-            <element signature="e#9979#9980#0" expanded="false" />
-            <element signature="e#10046#10047#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#10329#10330#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10467#10468#0" expanded="false" />
-            <element signature="e#10536#10537#0" expanded="false" />
-            <element signature="e#10595#10596#0" expanded="false" />
-            <element signature="e#11043#11044#0" expanded="false" />
-            <element signature="e#11089#11090#0" expanded="false" />
-            <element signature="e#11131#11132#0" expanded="false" />
-            <element signature="e#11196#11197#0" expanded="false" />
-            <element signature="e#11415#11416#0" expanded="false" />
-            <element signature="e#11470#11471#0" expanded="false" />
-            <element signature="e#11539#11540#0" expanded="false" />
-            <element signature="e#11608#11609#0" expanded="false" />
-            <element signature="e#11677#11678#0" expanded="false" />
-            <element signature="e#11735#11736#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1802,8 +1596,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#166#0" expanded="true" />
-            <element signature="e#1508#1528#0" expanded="false" />
+            <element signature="e#2919#2939#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1812,82 +1605,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/ReversiKtApp.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#12356#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2148#2149#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#3904#3905#0" expanded="false" />
-            <element signature="e#3949#3950#0" expanded="false" />
-            <element signature="e#3990#3991#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4293#4294#0" expanded="false" />
-            <element signature="e#4348#4349#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4486#4487#0" expanded="false" />
-            <element signature="e#4555#4556#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-            <element signature="e#5093#5094#0" expanded="false" />
-            <element signature="e#5135#5136#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="e#5443#5444#0" expanded="false" />
-            <element signature="e#5498#5499#0" expanded="false" />
-            <element signature="e#5567#5568#0" expanded="false" />
-            <element signature="e#5636#5637#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5763#5764#0" expanded="false" />
-            <element signature="e#6192#6193#0" expanded="false" />
-            <element signature="e#6237#6238#0" expanded="false" />
-            <element signature="e#6278#6279#0" expanded="false" />
-            <element signature="e#6354#6355#0" expanded="false" />
-            <element signature="e#6581#6582#0" expanded="false" />
-            <element signature="e#6636#6637#0" expanded="false" />
-            <element signature="e#6705#6706#0" expanded="false" />
-            <element signature="e#6774#6775#0" expanded="false" />
-            <element signature="e#6843#6844#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-            <element signature="e#7418#7419#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7512#7513#0" expanded="false" />
-            <element signature="e#7581#7582#0" expanded="false" />
-            <element signature="e#7805#7806#0" expanded="false" />
-            <element signature="e#7860#7861#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8759#8760#0" expanded="false" />
-            <element signature="e#8801#8802#0" expanded="false" />
-            <element signature="e#8841#8842#0" expanded="false" />
-            <element signature="e#8898#8899#0" expanded="false" />
-            <element signature="e#9119#9120#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9243#9244#0" expanded="false" />
-            <element signature="e#9312#9313#0" expanded="false" />
-            <element signature="e#9381#9382#0" expanded="false" />
-            <element signature="e#9435#9436#0" expanded="false" />
-            <element signature="e#9891#9892#0" expanded="false" />
-            <element signature="e#9938#9939#0" expanded="false" />
-            <element signature="e#9979#9980#0" expanded="false" />
-            <element signature="e#10046#10047#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#10329#10330#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10467#10468#0" expanded="false" />
-            <element signature="e#10536#10537#0" expanded="false" />
-            <element signature="e#10595#10596#0" expanded="false" />
-            <element signature="e#11043#11044#0" expanded="false" />
-            <element signature="e#11089#11090#0" expanded="false" />
-            <element signature="e#11131#11132#0" expanded="false" />
-            <element signature="e#11196#11197#0" expanded="false" />
-            <element signature="e#11415#11416#0" expanded="false" />
-            <element signature="e#11470#11471#0" expanded="false" />
-            <element signature="e#11539#11540#0" expanded="false" />
-            <element signature="e#11608#11609#0" expanded="false" />
-            <element signature="e#11677#11678#0" expanded="false" />
-            <element signature="e#11735#11736#0" expanded="false" />
+            <element signature="e#2919#2939#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1906,94 +1658,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#12356#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#2148#2149#0" expanded="false" />
-            <element signature="e#2171#2172#0" expanded="false" />
-            <element signature="e#3904#3905#0" expanded="false" />
-            <element signature="e#3949#3950#0" expanded="false" />
-            <element signature="e#3990#3991#0" expanded="false" />
-            <element signature="e#4066#4067#0" expanded="false" />
-            <element signature="e#4293#4294#0" expanded="false" />
-            <element signature="e#4348#4349#0" expanded="false" />
-            <element signature="e#4417#4418#0" expanded="false" />
-            <element signature="e#4486#4487#0" expanded="false" />
-            <element signature="e#4555#4556#0" expanded="false" />
-            <element signature="e#4612#4613#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-            <element signature="e#5093#5094#0" expanded="false" />
-            <element signature="e#5135#5136#0" expanded="false" />
-            <element signature="e#5213#5214#0" expanded="false" />
-            <element signature="e#5443#5444#0" expanded="false" />
-            <element signature="e#5498#5499#0" expanded="false" />
-            <element signature="e#5567#5568#0" expanded="false" />
-            <element signature="e#5636#5637#0" expanded="false" />
-            <element signature="e#5705#5706#0" expanded="false" />
-            <element signature="e#5763#5764#0" expanded="false" />
-            <element signature="e#6192#6193#0" expanded="false" />
-            <element signature="e#6237#6238#0" expanded="false" />
-            <element signature="e#6278#6279#0" expanded="false" />
-            <element signature="e#6354#6355#0" expanded="false" />
-            <element signature="e#6581#6582#0" expanded="false" />
-            <element signature="e#6636#6637#0" expanded="false" />
-            <element signature="e#6705#6706#0" expanded="false" />
-            <element signature="e#6774#6775#0" expanded="false" />
-            <element signature="e#6843#6844#0" expanded="false" />
-            <element signature="e#6900#6901#0" expanded="false" />
-            <element signature="e#7418#7419#0" expanded="false" />
-            <element signature="e#7467#7468#0" expanded="false" />
-            <element signature="e#7512#7513#0" expanded="false" />
-            <element signature="e#7581#7582#0" expanded="false" />
-            <element signature="e#7805#7806#0" expanded="false" />
-            <element signature="e#7860#7861#0" expanded="false" />
-            <element signature="e#7929#7930#0" expanded="false" />
-            <element signature="e#7998#7999#0" expanded="false" />
-            <element signature="e#8067#8068#0" expanded="false" />
-            <element signature="e#8128#8129#0" expanded="false" />
-            <element signature="e#8759#8760#0" expanded="false" />
-            <element signature="e#8801#8802#0" expanded="false" />
-            <element signature="e#8841#8842#0" expanded="false" />
-            <element signature="e#8898#8899#0" expanded="false" />
-            <element signature="e#9119#9120#0" expanded="false" />
-            <element signature="e#9174#9175#0" expanded="false" />
-            <element signature="e#9243#9244#0" expanded="false" />
-            <element signature="e#9312#9313#0" expanded="false" />
-            <element signature="e#9381#9382#0" expanded="false" />
-            <element signature="e#9435#9436#0" expanded="false" />
-            <element signature="e#9891#9892#0" expanded="false" />
-            <element signature="e#9938#9939#0" expanded="false" />
-            <element signature="e#9979#9980#0" expanded="false" />
-            <element signature="e#10046#10047#0" expanded="false" />
-            <element signature="e#10274#10275#0" expanded="false" />
-            <element signature="e#10329#10330#0" expanded="false" />
-            <element signature="e#10398#10399#0" expanded="false" />
-            <element signature="e#10467#10468#0" expanded="false" />
-            <element signature="e#10536#10537#0" expanded="false" />
-            <element signature="e#10595#10596#0" expanded="false" />
-            <element signature="e#11043#11044#0" expanded="false" />
-            <element signature="e#11089#11090#0" expanded="false" />
-            <element signature="e#11131#11132#0" expanded="false" />
-            <element signature="e#11196#11197#0" expanded="false" />
-            <element signature="e#11415#11416#0" expanded="false" />
-            <element signature="e#11470#11471#0" expanded="false" />
-            <element signature="e#11539#11540#0" expanded="false" />
-            <element signature="e#11608#11609#0" expanded="false" />
-            <element signature="e#11677#11678#0" expanded="false" />
-            <element signature="e#11735#11736#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.1-2/bd3717a8dd4a5f92cac43a4ec1726a1927bd2e03/kotlin-runtime-1.0.1-2.jar!/kotlin/collections/collections.kotlin_builtins">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2001,7 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="42" column="57" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2009,7 +1676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="724" column="48" selection-start-line="724" selection-start-column="48" selection-end-line="724" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2017,7 +1683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2025,7 +1690,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Lazy.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2176">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/javafx-src.zip!/javafx/scene/layout/ColumnConstraints.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="111" column="11" selection-start-line="111" selection-start-column="11" selection-end-line="111" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Styles.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="655">
+          <caret line="51" column="1" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+          <folding>
+            <marker date="1463947594527" expanded="true" signature="147:292" placeholder="{...}" />
+            <marker date="1463947594527" expanded="true" signature="1124:1161" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2033,22 +1732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/kotlin/util/Lazy.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2061,44 +1744,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/Styles.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/game.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="-102">
+          <caret line="128" column="24" selection-start-line="128" selection-start-column="24" selection-end-line="128" selection-end-column="24" />
           <folding>
-            <element signature="e#0#95#0" expanded="true" />
-            <marker date="1463331289576" expanded="true" signature="124:916" placeholder="{...}" />
-            <marker date="1463331289576" expanded="true" signature="304:914" placeholder="{...}" />
-            <marker date="1463331289576" expanded="true" signature="322:504" placeholder="{...}" />
+            <marker date="1463953879033" expanded="true" signature="3572:3586" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/MainWindow.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="34" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="536">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
           <folding>
-            <element signature="e#0#166#0" expanded="true" />
-            <element signature="e#1508#1528#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/game.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="109" column="41" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#158#0" expanded="true" />
+            <element signature="e#2919#2939#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/bot.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -141,22 +141,22 @@
         <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/ef782abad0d3f1d30644c4023a6bbc6fe371e23a/javax.json-1.0.4-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-runtime:1.0.1-2">
+    <library name="Gradle: org.jetbrains.kotlin:kotlin-runtime:1.0.2">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.1-2/bd3717a8dd4a5f92cac43a4ec1726a1927bd2e03/kotlin-runtime-1.0.1-2.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.2/8ec2d49a780ddba5e9b6860a72969e4d5bbc0c55/kotlin-runtime-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.1-2/64f03ca4d326d441cd3f30b0a7cc95daea68ad39/kotlin-runtime-1.0.1-2-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-runtime/1.0.2/7d8382a1dcf97e4481a6d267bbd26ad9d4e60b9e/kotlin-runtime-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.0.1-2">
+    <library name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.0.2">
       <CLASSES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/394823fb32dc558cc9c2b907c9df5e39caa52f2c/kotlin-stdlib-1.0.1-2.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.2/22063f19bfd8e50f21fc310842a91ff5b31bb272/kotlin-stdlib-1.0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
-        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.1-2/552aa65515809ae0cf66eb9a3d162ce80f83fbf5/kotlin-stdlib-1.0.1-2-sources.jar!/" />
+        <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.0.2/81502b079b2472f09df93ab0f2189de0d13f6cb4/kotlin-stdlib-1.0.2-sources.jar!/" />
       </SOURCES>
     </library>
   </component>

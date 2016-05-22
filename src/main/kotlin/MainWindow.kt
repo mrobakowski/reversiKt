@@ -1,12 +1,13 @@
+
 import GamePlayer.Computer
 import GamePlayer.Human
 import Player.Black
 import Player.White
+import javafx.application.Platform
 import javafx.geometry.HPos
 import javafx.geometry.Pos
 import javafx.geometry.VPos
 import javafx.scene.control.Control
-import javafx.scene.input.MouseEvent
 import javafx.scene.layout.*
 import tornadofx.*
 
@@ -35,7 +36,7 @@ class MainWindow : View() {
                 board = it
                 board.applyToUi(uiList)
                 println("${board.currentPlayer}'s turn!")
-//                aiBoardPlay()
+                currentPlayer.waitFor(this)
             }
         }
     }
@@ -44,6 +45,7 @@ class MainWindow : View() {
         aiBusy = true
         val bot = (currentPlayer as? Computer)?.bot ?: throw IllegalStateException("current player isn't a bot")
         runAsync {
+            Thread.sleep(200)
             bot.getMove(board)
         } ui {
             println(it)
@@ -58,7 +60,8 @@ class MainWindow : View() {
                 board = board.copy(currentPlayer = board.currentPlayer.opposite)
             }
             aiBusy = false
-            println("Player's turn!")
+            println("${board.currentPlayer}'s turn!")
+            currentPlayer.waitFor(this)
         }
     }
 
@@ -77,19 +80,6 @@ class MainWindow : View() {
         val cellUis = Array<Pane?>(size * size) { null }
 
         board = Board(size)
-
-//        val playerBoardPlay = { row: Int, column: Int ->
-//            { ev: MouseEvent ->
-//                if (canHumanPlay) {
-//                    board.play(row to column)?.let {
-//                        board = it
-//                        board.applyToUi(uiList)
-//                        println("AI's turn!")
-//                        aiBoardPlay()
-//                    }
-//                }
-//            }
-//        }
 
         root.center {
             stackpane {
@@ -127,6 +117,7 @@ class MainWindow : View() {
                         )
                     }
                     //endregion
+
                     //region sizes
                     prefHeight = size * cellSize
                     prefWidth = size * cellSize
@@ -135,6 +126,7 @@ class MainWindow : View() {
                     minWidth = Control.USE_PREF_SIZE
                     minHeight = Control.USE_PREF_SIZE
                     //endregion
+
                 }
                 StackPane.setAlignment(grid, Pos.CENTER)
             }
@@ -144,9 +136,9 @@ class MainWindow : View() {
                     button("Pass") {
                         addClass(Styles.btn)
                         setOnAction {
-                            if (!aiBusy) {
+                            if (canHumanPlay) {
                                 board = board.copy(currentPlayer = board.currentPlayer.opposite)
-                                aiBoardPlay()
+                                currentPlayer.waitFor(this@MainWindow)
                             }
                         }
                     }
@@ -156,11 +148,21 @@ class MainWindow : View() {
                             reset()
                         }
                     }
+                    button("Start AI") {
+                        addClass(Styles.btn)
+                        setOnAction {
+                            currentPlayer.waitFor(this@MainWindow)
+                        }
+                    }
                 }
             }
         }
         uiList = cellUis.filterNotNull().toList()
         board.applyToUi(uiList)
+
+        whitePlayer = Computer(AlphaBetaBot(White, 5))
+        blackPlayer = Computer(AlphaBetaBot(Black, 3))
+//        blackPlayer = Human
     }
 
     private fun reset() {
@@ -174,4 +176,15 @@ class MainWindow : View() {
 sealed class GamePlayer {
     object Human : GamePlayer()
     class Computer(val bot: Bot) : GamePlayer()
+
+    fun waitFor(mainWindow: MainWindow) {
+        when (this) {
+            is Human -> {}
+            is Computer -> {
+                Platform.runLater {
+                    mainWindow.aiBoardPlay()
+                }
+            }
+        }
+    }
 }
