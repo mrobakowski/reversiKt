@@ -3,6 +3,8 @@ import java.util.*
 abstract class Bot(val maxPlayer: Player, val heuristics: (Board, Player) -> Double) {
     val minPlayer = maxPlayer.opposite
 
+    var openedNodes = 0
+
     abstract fun getMove(board: Board): Pair<Double, Pair<Int, Int>?>
 }
 
@@ -19,15 +21,15 @@ class AlphaBetaBot(maxPlayer: Player, val depth: Int, heuristics: (Board, Player
 
         if (depth == 0 || board.legalMoves.isEmpty())
             return heuristics(board, maxPlayer) to null
+
         var bestMove: Pair<Double, Pair<Int, Int>?>
         if (isMaxPlayer) {
             bestMove = Double.NEGATIVE_INFINITY to null
 
-            for ((move, boardAfterMove) in board.legalMoves
-                    .map { it to board.play(it)!! }
-                    .sortedBy { -staticWeights(it.second) }
-            ) {
-                bestMove = c.max(bestMove, alphaBeta(boardAfterMove, depth - 1, alpha, beta, !isMaxPlayer).first to move)
+            val sortedMoves = board.legalMoves//.sortedBy { staticBoardWeights(board.play(it)!!, maxPlayer) }
+            for (move in sortedMoves) {
+                openedNodes++
+                bestMove = c.max(bestMove, alphaBeta(board.play(move)!!, depth - 1, alpha, beta, !isMaxPlayer).first to move)
                 alpha = Math.max(alpha, bestMove.first)
                 if (beta <= alpha) break
             }
@@ -35,31 +37,63 @@ class AlphaBetaBot(maxPlayer: Player, val depth: Int, heuristics: (Board, Player
         } else {
             bestMove = Double.POSITIVE_INFINITY to null
 
-            for ((move, boardAfterMove) in board.legalMoves
-                    .map { it to board.play(it)!! }
-                    .sortedBy { staticWeights(it.second) }
-            ) {
-                bestMove = c.min(bestMove, alphaBeta(boardAfterMove, depth - 1, alpha, beta, !isMaxPlayer).first to move)
+            val sortedMoves = board.legalMoves//.sortedBy { staticBoardWeights(board.play(it)!!, minPlayer) }
+            for (move in sortedMoves) {
+                openedNodes++
+                bestMove = c.min(bestMove, alphaBeta(board.play(move)!!, depth - 1, alpha, beta, !isMaxPlayer).first to move)
                 beta = Math.min(beta, bestMove.first)
                 if (beta <= alpha) break
             }
             return bestMove
         }
     }
+}
 
-    fun staticWeights(b: Board): Int {
-        var i = 0
-        return b.cells.sumBy {
-            if (it == maxPlayer.disk) {
-                boardWeights[i++]
-            } else if (it == minPlayer.disk) {
-                -boardWeights[i++]
-            } else {
-                i++
-                0
+class MiniMaxBot(maxPlayer: Player, val depth: Int, heuristics: (Board, Player) -> Double) :
+        Bot(maxPlayer, heuristics) {
+    override fun getMove(board: Board): Pair<Double, Pair<Int, Int>?> =
+            miniMax(board, depth, board.currentPlayer == maxPlayer)
+
+    private val c = Comparator<Pair<Double, Pair<Int, Int>?>> { a, b -> a.first.compareTo(b.first) }
+
+    fun miniMax(board: Board, depth: Int, isMaxPlayer: Boolean): Pair<Double, Pair<Int, Int>?> {
+
+        if (depth == 0 || board.legalMoves.isEmpty())
+            return heuristics(board, maxPlayer) to null
+
+        var bestMove: Pair<Double, Pair<Int, Int>?>
+        if (isMaxPlayer) {
+            bestMove = Double.NEGATIVE_INFINITY to null
+
+            val sortedMoves = board.legalMoves//.sortedBy { staticBoardWeights(board.play(it)!!, maxPlayer) }
+            for (move in sortedMoves) {
+                openedNodes++
+                bestMove = c.max(bestMove, miniMax(board.play(move)!!, depth - 1, !isMaxPlayer).first to move)
             }
+            return bestMove
+        } else {
+            bestMove = Double.POSITIVE_INFINITY to null
+
+            val sortedMoves = board.legalMoves//.sortedBy { staticBoardWeights(board.play(it)!!, minPlayer) }
+            for (move in sortedMoves) {
+                openedNodes++
+                bestMove = c.min(bestMove, miniMax(board.play(move)!!, depth - 1, !isMaxPlayer).first to move)
+            }
+            return bestMove
         }
     }
+}
+
+fun staticBoardWeights(b: Board, player: Player): Int {
+    var sum = 0
+    for (i in 0..63) {
+        if (b.cells[i] == player.disk)
+            sum += boardWeights[i]
+        else if (b.cells[i] == player.opposite.disk) {
+            sum -= boardWeights[i]
+        }
+    }
+    return -sum
 }
 
 private val boardWeights = intArrayOf(

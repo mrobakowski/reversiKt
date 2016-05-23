@@ -9,6 +9,7 @@ import javafx.geometry.VPos
 import javafx.scene.control.Control
 import javafx.scene.layout.*
 import tornadofx.*
+import kotlin.system.measureTimeMillis
 
 class MainWindow : View() {
     override val root = BorderPane()
@@ -27,6 +28,7 @@ class MainWindow : View() {
                 val bot = (blackPlayer as Computer).bot
                 when (bot) {
                     is AlphaBetaBot -> blackPlayer = Computer(AlphaBetaBot(bot.maxPlayer, value, bot.heuristics))
+                    is MiniMaxBot -> blackPlayer = Computer(MiniMaxBot(bot.maxPlayer, value, bot.heuristics))
                 }
             }
         }
@@ -37,6 +39,7 @@ class MainWindow : View() {
                 val bot = (whitePlayer as Computer).bot
                 when (bot) {
                     is AlphaBetaBot -> whitePlayer = Computer(AlphaBetaBot(bot.maxPlayer, value, bot.heuristics))
+                    is MiniMaxBot -> whitePlayer = Computer(MiniMaxBot(bot.maxPlayer, value, bot.heuristics))
                 }
             }
         }
@@ -65,7 +68,13 @@ class MainWindow : View() {
         aiBusy = true
         val bot = (currentPlayer as? Computer)?.bot ?: throw IllegalStateException("current player isn't a bot")
         runAsync {
-            bot.getMove(board)
+            bot.openedNodes = 0
+            var move: Pair<Double, Pair<Int, Int>?> = 0.0 to null // dummy initializer
+            val time = measureTimeMillis {
+                move = bot.getMove(board)
+            }
+            println("Time: $time ms, Opened nodes: ${bot.openedNodes}")
+            move
         } ui {
             println(it)
             val pos = it.second
@@ -162,89 +171,101 @@ class MainWindow : View() {
                 }
                 StackPane.setAlignment(grid, Pos.CENTER)
             }
-            root.bottom {
-                hbox {
-                    addClass(Styles.btnContainer)
-                    button("Pass") {
-                        addClass(Styles.btn)
-                        setOnAction {
-                            if (canHumanPlay) {
-                                board = board.copy(currentPlayer = board.currentPlayer.opposite)
-                                if (!passedLastTurn)
-                                    currentPlayer.waitFor(this@MainWindow)
-                                else
-                                    gameOver()
-                                passedLastTurn = true
-                            }
-                        }
-                    }
-                    button("Reset") {
-                        addClass(Styles.btn)
-                        setOnAction {
-                            reset()
-                        }
-                    }
-                    button("Start AI") {
-                        addClass(Styles.btn)
-                        setOnAction {
-                            currentPlayer.waitFor(this@MainWindow)
+
+        }
+        root.bottom {
+            hbox {
+                addClass(Styles.btnContainer)
+                button("Pass") {
+                    addClass(Styles.btn)
+                    setOnAction {
+                        if (canHumanPlay) {
+                            board = board.copy(currentPlayer = board.currentPlayer.opposite)
+                            if (!passedLastTurn)
+                                currentPlayer.waitFor(this@MainWindow)
+                            else
+                                gameOver()
+                            passedLastTurn = true
                         }
                     }
                 }
+                button("Reset") {
+                    addClass(Styles.btn)
+                    setOnAction {
+                        reset()
+                    }
+                }
+                button("Start AI") {
+                    addClass(Styles.btn)
+                    setOnAction {
+                        currentPlayer.waitFor(this@MainWindow)
+                    }
+                }
             }
-            root.right {
+        }
+        root.right {
+            vbox {
+                addClass(Styles.btnContainer)
+                label("White Player")
                 vbox {
-                    addClass(Styles.btnContainer)
-                    label("White Player")
-                    vbox {
-                        addClass(Styles.rightVbox)
-                        togglegroup {
-                            radiobutton("Human") {
-                                setOnAction {
-                                    whitePlayer = Human
-                                }
-                                isSelected = true
+                    addClass(Styles.rightVbox)
+                    togglegroup {
+                        radiobutton("Human") {
+                            setOnAction {
+                                whitePlayer = Human
                             }
-                            radiobutton("AlphaBeta") {
-                                setOnAction {
-                                    whitePlayer = Computer(AlphaBetaBot(White, whitePlayerDepth, ::heuristics))
-                                }
-
+                            isSelected = true
+                        }
+                        radiobutton("AlphaBeta") {
+                            setOnAction {
+                                whitePlayer = Computer(AlphaBetaBot(White, whitePlayerDepth, ::diskAmountDependantHeuristic))
                             }
                         }
-                        hbox {
-                            spacing = 5.0
-                            label("AI depth")
-                            textfield("5") {
-                                setOnKeyTyped {
-                                    tryOrNull { text.toInt() }?.let { whitePlayerDepth = it }
-                                }
+                        radiobutton("MiniMax") {
+                            setOnAction {
+                                whitePlayer = Computer(MiniMaxBot(White, whitePlayerDepth, ::diskAmountDependantHeuristic))
                             }
                         }
                     }
-                    label("Black Player")
-                    vbox {
-                        addClass(Styles.rightVbox)
-                        togglegroup {
-                            radiobutton("Human") {
-                                setOnAction {
-                                    blackPlayer = Human
-                                }
-                                isSelected = true
-                            }
-                            radiobutton("AlphaBeta") {
-                                setOnAction {
-                                    blackPlayer = Computer(AlphaBetaBot(Black, blackPlayerDepth, ::heuristics))
-                                }
+                    hbox {
+                        spacing = 5.0
+                        label("AI depth")
+                        textfield("5") {
+                            prefWidth = 50.0
+                            setOnKeyTyped {
+                                tryOrNull { text.toInt() }?.let { whitePlayerDepth = it }
                             }
                         }
-                        hbox {
-                            spacing = 5.0
-                            label("AI depth")
-                            textfield("5") {
-                                setOnKeyTyped {
-                                    tryOrNull { text.toInt() }?.let { blackPlayerDepth = it }
-                                }
+                    }
+                }
+                label("Black Player")
+                vbox {
+                    addClass(Styles.rightVbox)
+                    togglegroup {
+                        radiobutton("Human") {
+                            setOnAction {
+                                blackPlayer = Human
+                            }
+                            isSelected = true
+                        }
+                        radiobutton("AlphaBeta") {
+                            setOnAction {
+                                blackPlayer = Computer(AlphaBetaBot(Black, blackPlayerDepth, ::diskAmountDependantHeuristic))
+                            }
+                        }
+                        radiobutton("MiniMax") {
+                            setOnAction {
+                                blackPlayer = Computer(MiniMaxBot(Black, blackPlayerDepth, ::diskAmountDependantHeuristic))
+                            }
+                        }
+                    }
+                    hbox {
+                        spacing = 5.0
+                        label("AI depth")
+                        textfield("5") {
+                            prefWidth = 50.0
+                            setOnKeyTyped {
+                                tryOrNull { text.toInt() }?.let { blackPlayerDepth = it }
                             }
                         }
                     }
@@ -254,12 +275,12 @@ class MainWindow : View() {
         uiList = cellUis.filterNotNull().toList()
         board.applyToUi(uiList)
 
-        whitePlayer = Human
-        blackPlayer = Human
+        whitePlayer = Computer(AlphaBetaBot(White, 5, ::diskAmountDependantHeuristic))
+        blackPlayer = Computer(AlphaBetaBot(Black, 5, ::linearCombination))
     }
 
     private fun gameOver() {
-        println("Game Over:\n\tBlack: ${board.blackPlayerDisks}\n\tWhite: ${board.whitePlayerDisks}")
+        println("Game Over:\n\tWhite: ${board.whitePlayerDisks}\n\tBlack: ${board.blackPlayerDisks}")
     }
 
     private fun reset() {
