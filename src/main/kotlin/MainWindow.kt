@@ -173,13 +173,53 @@ class MainWindow : View() {
                     }
                 }
             }
+            root.right {
+                vbox {
+                    addClass(Styles.btnContainer)
+                    label("White Player")
+                    vbox {
+                        addClass(Styles.rightVbox)
+                        togglegroup {
+                            radiobutton("Human") {
+                                setOnAction {
+                                    whitePlayer = Human
+                                }
+                                isSelected = true
+                            }
+                            radiobutton("AlphaBeta") {
+                                setOnAction {
+                                    whitePlayer = Computer(AlphaBetaBot(White, 5))
+                                }
+                            }
+                        }
+                    }
+                    label("BlackPlayer")
+                    vbox {
+                        addClass(Styles.rightVbox)
+                        togglegroup {
+                            radiobutton("Human") {
+                                setOnAction {
+                                    blackPlayer = Human
+                                }
+                                isSelected = true
+                            }
+                            radiobutton("AlphaBeta") {
+                                setOnAction {
+                                    blackPlayer = Computer(AlphaBetaBot(Black, 5))
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         uiList = cellUis.filterNotNull().toList()
         board.applyToUi(uiList)
 
-        whitePlayer = Computer(AlphaBetaBot(White, 5))
-        blackPlayer = Computer(AlphaBetaBot(Black, 3))
-//        blackPlayer = Human
+//        whitePlayer = Computer(AlphaBetaBot(White, 5))
+//        blackPlayer = Computer(AlphaBetaBot(Black, 3))
+        whitePlayer = Human
+        blackPlayer = Human
     }
 
     private fun gameOver() {

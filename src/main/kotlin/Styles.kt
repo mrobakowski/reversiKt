@@ -10,6 +10,7 @@ class Styles: Stylesheet() {
         val legalCell by cssclass()
         val btn by cssclass()
         val btnContainer by cssclass()
+        val rightVbox by cssclass()
     }
 
     init {
@@ -46,6 +47,11 @@ class Styles: Stylesheet() {
 
         s(btnContainer) {
             padding = box(5.px)
+            spacing = 5.px
+        }
+
+        s(rightVbox) {
+            padding = box(0.px, 0.px, 10.px, 10.px)
             spacing = 5.px
         }
     }
