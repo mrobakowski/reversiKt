@@ -20,6 +20,7 @@ class MainWindow : View() {
     var aiBusy = false
     var uiList: List<Pane>
     val size = 8
+    var passedLastTurn = false
 
     val currentPlayer: GamePlayer
         get() = when (board.currentPlayer) {
@@ -45,7 +46,6 @@ class MainWindow : View() {
         aiBusy = true
         val bot = (currentPlayer as? Computer)?.bot ?: throw IllegalStateException("current player isn't a bot")
         runAsync {
-            Thread.sleep(200)
             bot.getMove(board)
         } ui {
             println(it)
@@ -55,13 +55,26 @@ class MainWindow : View() {
                     board = it
                     board.applyToUi(uiList)
                 }
+                passedLastTurn = false
+
+                aiBusy = false
+                println("${board.currentPlayer}'s turn!")
+                currentPlayer.waitFor(this)
             } else {
-                println("AI passes");
-                board = board.copy(currentPlayer = board.currentPlayer.opposite)
+                if (passedLastTurn) {
+                    aiBusy = false
+                    gameOver()
+                } else {
+                    println("AI passes");
+                    board = board.copy(currentPlayer = board.currentPlayer.opposite)
+                    passedLastTurn = true
+
+                    aiBusy = false
+                    println("${board.currentPlayer}'s turn!")
+                    currentPlayer.waitFor(this)
+                }
             }
-            aiBusy = false
-            println("${board.currentPlayer}'s turn!")
-            currentPlayer.waitFor(this)
+
         }
     }
 
@@ -138,7 +151,11 @@ class MainWindow : View() {
                         setOnAction {
                             if (canHumanPlay) {
                                 board = board.copy(currentPlayer = board.currentPlayer.opposite)
-                                currentPlayer.waitFor(this@MainWindow)
+                                if (!passedLastTurn)
+                                    currentPlayer.waitFor(this@MainWindow)
+                                else
+                                    gameOver()
+                                passedLastTurn = true
                             }
                         }
                     }
@@ -163,6 +180,10 @@ class MainWindow : View() {
         whitePlayer = Computer(AlphaBetaBot(White, 5))
         blackPlayer = Computer(AlphaBetaBot(Black, 3))
 //        blackPlayer = Human
+    }
+
+    private fun gameOver() {
+        println("Game Over")
     }
 
     private fun reset() {
