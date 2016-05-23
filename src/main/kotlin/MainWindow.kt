@@ -1,4 +1,3 @@
-
 import GamePlayer.Computer
 import GamePlayer.Human
 import Player.Black
@@ -21,6 +20,26 @@ class MainWindow : View() {
     var uiList: List<Pane>
     val size = 8
     var passedLastTurn = false
+    var blackPlayerDepth = 5
+        set(value) {
+            field = value
+            if (blackPlayer is Computer) {
+                val bot = (blackPlayer as Computer).bot
+                when (bot) {
+                    is AlphaBetaBot -> blackPlayer = Computer(AlphaBetaBot(bot.maxPlayer, value, bot.heuristics))
+                }
+            }
+        }
+    var whitePlayerDepth = 5
+        set(value) {
+            field = value
+            if (whitePlayer is Computer) {
+                val bot = (whitePlayer as Computer).bot
+                when (bot) {
+                    is AlphaBetaBot -> whitePlayer = Computer(AlphaBetaBot(bot.maxPlayer, value, bot.heuristics))
+                }
+            }
+        }
 
     val currentPlayer: GamePlayer
         get() = when (board.currentPlayer) {
@@ -188,12 +207,22 @@ class MainWindow : View() {
                             }
                             radiobutton("AlphaBeta") {
                                 setOnAction {
-                                    whitePlayer = Computer(AlphaBetaBot(White, 5))
+                                    whitePlayer = Computer(AlphaBetaBot(White, whitePlayerDepth, ::heuristics))
+                                }
+
+                            }
+                        }
+                        hbox {
+                            spacing = 5.0
+                            label("AI depth")
+                            textfield("5") {
+                                setOnKeyTyped {
+                                    tryOrNull { text.toInt() }?.let { whitePlayerDepth = it }
                                 }
                             }
                         }
                     }
-                    label("BlackPlayer")
+                    label("Black Player")
                     vbox {
                         addClass(Styles.rightVbox)
                         togglegroup {
@@ -205,7 +234,16 @@ class MainWindow : View() {
                             }
                             radiobutton("AlphaBeta") {
                                 setOnAction {
-                                    blackPlayer = Computer(AlphaBetaBot(Black, 5))
+                                    blackPlayer = Computer(AlphaBetaBot(Black, blackPlayerDepth, ::heuristics))
+                                }
+                            }
+                        }
+                        hbox {
+                            spacing = 5.0
+                            label("AI depth")
+                            textfield("5") {
+                                setOnKeyTyped {
+                                    tryOrNull { text.toInt() }?.let { blackPlayerDepth = it }
                                 }
                             }
                         }
@@ -216,14 +254,12 @@ class MainWindow : View() {
         uiList = cellUis.filterNotNull().toList()
         board.applyToUi(uiList)
 
-//        whitePlayer = Computer(AlphaBetaBot(White, 5))
-//        blackPlayer = Computer(AlphaBetaBot(Black, 3))
         whitePlayer = Human
         blackPlayer = Human
     }
 
     private fun gameOver() {
-        println("Game Over")
+        println("Game Over:\n\tBlack: ${board.blackPlayerDisks}\n\tWhite: ${board.whitePlayerDisks}")
     }
 
     private fun reset() {
@@ -240,12 +276,21 @@ sealed class GamePlayer {
 
     fun waitFor(mainWindow: MainWindow) {
         when (this) {
-            is Human -> {}
+            is Human -> {
+            }
             is Computer -> {
                 Platform.runLater {
                     mainWindow.aiBoardPlay()
                 }
             }
         }
+    }
+}
+
+inline fun <T> tryOrNull(block: () -> T): T? {
+    return try {
+        block()
+    } catch(e: Exception) {
+        null
     }
 }

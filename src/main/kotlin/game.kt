@@ -145,11 +145,13 @@ sealed class Player {
     object White : Player() {
         override val disk = Cell.WhiteDisk
         override val opposite = Black
+        override fun toString() = "White"
     }
 
     object Black : Player() {
         override val disk = Cell.BlackDisk
         override val opposite = White
+        override fun toString() = "Black"
     }
 }
 
